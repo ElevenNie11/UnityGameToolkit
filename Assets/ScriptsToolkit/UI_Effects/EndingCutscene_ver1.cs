@@ -10,19 +10,36 @@ public class EndingCutscene_ver1 : MonoBehaviour
 
     public void PlayEnding()
     {
-        endingCanvas.SetActive(true);
-        endingDirector.Play();
+        if (endingCanvas != null)
+        {
+            endingCanvas.SetActive(true);
+        }
+
+        if (endingDirector != null)
+        {
+            endingDirector.Play();
+        }
     }
 
     private void Awake()
     {
-        endingCanvas.SetActive(false);
-        endingDirector.stopped += OnEndingStopped;
+        if (endingCanvas != null)
+        {
+            endingCanvas.SetActive(false);
+        }
+
+        if (endingDirector != null)
+        {
+            endingDirector.stopped += OnEndingStopped;
+        }
     }
 
-    private void Oestroy()
+    private void OnDestroy()
     {
-        endingDirector.stopped -= OnEndingStopped;        
+        if (endingDirector != null)
+        {
+            endingDirector.stopped -= OnEndingStopped;
+        }
     }
 
     private void OnEndingStopped(PlayableDirector obj)
