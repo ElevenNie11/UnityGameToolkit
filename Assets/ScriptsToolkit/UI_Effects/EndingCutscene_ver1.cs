@@ -7,7 +7,6 @@ public class EndingCutscene_ver1 : MonoBehaviour
 {
     public GameObject endingCanvas;
     public PlayableDirector endingDirector;
-    public string nextScene = "MainMenu";
 
     public void PlayEnding()
     {
@@ -28,6 +27,6 @@ public class EndingCutscene_ver1 : MonoBehaviour
 
     private void OnEndingStopped(PlayableDirector obj)
     {
-        SceneManager.LoadScene(nextScene);   //切换成下一个场景
+        SceneManager.LoadScene("TestScene");   //切换成下一个场景: TestScene
     }
 }
