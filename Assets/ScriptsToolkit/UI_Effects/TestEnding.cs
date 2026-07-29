@@ -7,6 +7,7 @@ public class TestEnding : MonoBehaviour
     public EndingCutscene_ver1 ending;
     public void OnclickTestButton()
     {
+        Debug.Log("点击了测试结束按钮");
         ending.PlayEnding();
     }
 }
