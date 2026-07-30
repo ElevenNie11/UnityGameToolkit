@@ -53,4 +53,8 @@ Hierarchy结构
 - 改造*Cell_UI*预制体的层级（一定要做这件事！！！）
 - <img width="1280" height="766" alt="image" src="https://github.com/user-attachments/assets/490162eb-6f89-4156-85d6-af6b50cc434a" />
 
+---
+
+#### Script_03: 背包管理器（InventoryManager.cs，核心）
+- 挂载到PackagePanel或者一个管理器空对象上
   
