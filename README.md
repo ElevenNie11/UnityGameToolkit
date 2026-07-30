@@ -28,6 +28,9 @@ Hierarchy结构
 - 两套独立 UI：Content_Weapon（武器格子父物体）、Content_Food（食物格子父物体）
 
 ### 脚本需求：
+
+#### Script_01: `ItemData.cs`
+
 - 新建脚本`ItemData.cs`，用来定义物品信息: (使用方式：在 Project 窗口右键 → Inventory/Item，创建武器、食物配置文件，挂上对应的图片、类型)
   <img width="854" height="511" alt="image" src="https://github.com/user-attachments/assets/cff1af01-a63b-4379-b2f2-59537351b07f" />
   
@@ -41,3 +44,13 @@ Hierarchy结构
   ```
 - 背包格子只保存：ItemData引用 + 当前数量
 - 当拾取物品时，读取 ItemData 里的图标、名字、堆叠上限做逻辑判断
+  
+---
+
+#### Script_02: `CellUI.cs`
+
+- 此脚本绑定到*Cell_UI*预制体上
+- 改造*Cell_UI*预制体的层级（一定要做这件事！！！）
+- <img width="1280" height="766" alt="image" src="https://github.com/user-attachments/assets/490162eb-6f89-4156-85d6-af6b50cc434a" />
+
+  
