@@ -56,5 +56,6 @@ Hierarchy结构
 ---
 
 #### Script_03: 背包管理器（InventoryManager.cs，核心）
-- 挂载到PackagePanel或者一个管理器空对象上
+- 实现两套背包数据：挂载到PackagePanel或者一个管理器空对象上
+- 
   
