@@ -195,9 +195,11 @@ Hierarchy结构
 
 *在这份脚本中最主要的思想就是实现了用代码自动化替换了手动拖拽调整Inspector面板*
 
+<img width="617" height="389" alt="image" src="https://github.com/user-attachments/assets/82d3d9fa-b6ad-4a7d-8b79-4b08c714940c" />
+
 ---
 
-#### Script_03: 背包管理器（InventoryManager.cs，核心）
+#### Script_03: 背包管理器（`InventoryManager.cs`，核心）
 - 实现两套背包数据：挂载到PackagePanel或者一个管理器空对象上
 
 功能如下：
