@@ -1,6 +1,6 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 // 格子UI刷新，自动查找 iconImage 和 countText (TMP)，数量大于 1 才显示
 public class CellUI : MonoBehaviour
@@ -98,7 +98,7 @@ public class CellUI : MonoBehaviour
             countText.text = CurrentCount > 1 ? CurrentCount.ToString() : string.Empty;
         }
     }
-    
+
     //清空格子的外部方法
     public void Clear()
     {
