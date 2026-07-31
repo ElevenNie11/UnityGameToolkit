@@ -1,4 +1,9 @@
 # Unity脚本工具包[Unity Scripts Toolkit]
+# 目录
+- 剧情对话：
+- UI：
+- 背包系统：
+
 
 ## UI_Effects
 - 打字机效果: Typewriter_Effect
@@ -33,6 +38,28 @@ Hierarchy结构
 
 - 新建脚本`ItemData.cs`，用来定义物品信息: (使用方式：在 Project 窗口右键 → Inventory/Item，创建武器、食物配置文件，挂上对应的图片、类型)
   <img width="854" height="511" alt="image" src="https://github.com/user-attachments/assets/cff1af01-a63b-4379-b2f2-59537351b07f" />
+  ```
+  using UnityEngine;
+  //此脚本用来定义物品信息
+  //物品类型枚举
+  public enum ItemType
+  {
+      Weapon,    //武器工具
+      Food       //食物料理
+  }
+  // CreateAssetMenu 特性：这是 ScriptableObject 专属特性：作用是在Unity编辑器右键菜单生成配置文件
+  //1. fileName = "NewItem"：新建物品资源默认文件名
+  //2. menuName = "Inventory/Item"：右键路径
+    [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item")]
+  // ScriptableObject 适合存放静态数据：物品属性、技能数据、怪物属性；
+    public class ItemData : ScriptableObject
+    {
+        public string itemName;   //物品名称
+        public ItemType itemType; //物品类型（武器/食物 -> 枚举选择）
+        public Sprite icon;       //物品图标
+        public int maxStack = 1;  //堆叠上限（武器一般不能堆叠，食物可以堆叠）
+    }
+  ```
   
 #### 整体工作流程（背包系统逻辑）
 
@@ -56,5 +83,10 @@ Hierarchy结构
 ---
 
 #### Script_03: 背包管理器（InventoryManager.cs，核心）
-- 挂载到PackagePanel或者一个管理器空对象上
+- 实现两套背包数据：挂载到PackagePanel或者一个管理器空对象上
+
+功能如下：
+- 自动区分武器 / 食物，存入对应栏
+- 支持物品堆叠
+- 自动刷新 UI 格子
   
