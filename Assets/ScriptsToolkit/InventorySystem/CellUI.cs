@@ -1,31 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class CellUI : MonoBehaviour
 {
+    [Header("UI组件")]
     public Image iconImage;
     public TMP_Text countText;
-    //刷新格子显示
+
+    public ItemData CurrentItem { get; private set; }
+    public int CurrentCount { get; private set; }
+
+    private void Awake()
+    {
+        AutoBind();
+        RefreshCell(null, 0);
+    }
+
+    private void OnValidate()
+    {
+        AutoBind();
+    }
+
+    // 刷新格子显示。
     public void RefreshCell(ItemData item, int count)
     {
-        if(item == null)
+        CurrentItem = item;
+        CurrentCount = Mathf.Max(0, count);
+
+        if (item == null || CurrentCount <= 0)
         {
-            iconImage.sprite = null;
-            iconImage.enabled = false;
-            countText.text = "";
+            if (iconImage != null)
+            {
+                iconImage.sprite = null;
+                iconImage.enabled = false;
+            }
+
+            if (countText != null)
+            {
+                countText.text = string.Empty;
+            }
+
+            return;
         }
-        else
+
+        if (iconImage != null)
         {
             iconImage.enabled = true;
             iconImage.sprite = item.icon;
-            //堆叠数为1时不显示文字，大于1才显示
-            if(count > 1)
+            iconImage.preserveAspect = true;
+        }
+
+        if (countText != null)
+        {
+            countText.text = CurrentCount > 1 ? CurrentCount.ToString() : string.Empty;
+        }
+    }
+
+    public void Clear()
+    {
+        RefreshCell(null, 0);
+    }
+
+    private void AutoBind()
+    {
+        if (iconImage == null)
+        {
+            Transform icon = transform.Find("iconImage");
+            iconImage = icon != null ? icon.GetComponent<Image>() : GetFirstChildImage();
+        }
+
+        if (countText == null)
+        {
+            countText = GetComponentInChildren<TMP_Text>(true);
+        }
+    }
+
+    private Image GetFirstChildImage()
+    {
+        Image[] images = GetComponentsInChildren<Image>(true);
+        foreach (Image image in images)
+        {
+            if (image.gameObject != gameObject)
             {
-                //...
+                return image;
             }
         }
+
+        return null;
     }
 }
