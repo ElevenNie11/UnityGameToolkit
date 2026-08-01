@@ -202,6 +202,8 @@ Hierarchy结构
 #### Script_03: 背包管理器（`InventoryManager.cs`，核心）
 - 实现两套背包数据：挂载到PackagePanel或者一个管理器空对象上
 
+[📒飞书笔记]:https://wonderfulworld.feishu.cn/docx/V6LJdRFgdoaVd3xqBbqca6kjnec#part-RLeJdqfsyoOgi5xUXezcheEjnih
+
 功能如下：
 - 自动区分武器 / 食物，存入对应栏
 - 支持物品堆叠
