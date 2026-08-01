@@ -25,7 +25,7 @@ Hierarchy结构
 
 ## 动态加入UI到背包物品栏
 
-[📒飞书笔记]: https://wonderfulworld.feishu.cn/docx/V6LJdRFgdoaVd3xqBbqca6kjnec#part-RLeJdqfsyoOgi5xUXezcheEjnih
+### [📒飞书笔记]: https://wonderfulworld.feishu.cn/docx/V6LJdRFgdoaVd3xqBbqca6kjnec#part-RLeJdqfsyoOgi5xUXezcheEjnih
 
 ### 思路如下：
 先理清架构：
@@ -33,6 +33,9 @@ Hierarchy结构
 - 两套背包容器：武器背包、食物背包（对应你两个 ScrollView）
 - 拾取物品 → 判断类型 → 放入对应背包 → 动态生成 CellUI 显示在对应 Content
 - 两套独立 UI：Content_Weapon（武器格子父物体）、Content_Food（食物格子父物体）
+
+  <img width="1280" height="767" alt="屏幕截图 2026-08-01 151350" src="https://github.com/user-attachments/assets/492aafb0-a49b-41dc-88cc-e4c28017b442" />
+
 
 ### 脚本需求：
 
