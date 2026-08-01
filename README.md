@@ -24,6 +24,9 @@ Hierarchy结构
 <img width="239" height="282" alt="image" src="https://github.com/user-attachments/assets/0e2e3758-d9f4-4f49-9e84-89249e00d0b3" />
 
 ## 动态加入UI到背包物品栏
+
+[📒飞书笔记]: https://wonderfulworld.feishu.cn/docx/V6LJdRFgdoaVd3xqBbqca6kjnec#part-RLeJdqfsyoOgi5xUXezcheEjnih
+
 ### 思路如下：
 先理清架构：
 - 物品数据区分类型：武器 / 食物
@@ -201,8 +204,6 @@ Hierarchy结构
 
 #### Script_03: 背包管理器（`InventoryManager.cs`，核心）
 - 实现两套背包数据：挂载到PackagePanel或者一个管理器空对象上
-
-[📒飞书笔记]:https://wonderfulworld.feishu.cn/docx/V6LJdRFgdoaVd3xqBbqca6kjnec#part-RLeJdqfsyoOgi5xUXezcheEjnih
 
 功能如下：
 - 自动区分武器 / 食物，存入对应栏
