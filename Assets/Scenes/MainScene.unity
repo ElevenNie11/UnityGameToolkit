@@ -1966,7 +1966,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9ba21bf4bd85fcd43a5e38dced92c146, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (4)
@@ -2164,7 +2164,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 09d64d7122ababb41b0af352547623bc, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (1)
@@ -3368,7 +3368,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: be028b89678e420448cb4fe3ade2553f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (1)
@@ -3505,7 +3505,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 51f507f0506864d488e1a9f7551548d5, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (2)
@@ -3604,6 +3604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766054031}
+  - component: {fileID: 766054032}
   m_Layer: 5
   m_Name: PackagePanel
   m_TagString: Untagged
@@ -3634,6 +3635,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &766054032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766054030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429b553983c20ba41b2617106237c4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &771183493 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6287215244038345473, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
@@ -3650,7 +3663,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 51d4eefff0eb39946b03fd458903e4d8, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (3)
@@ -5348,7 +5361,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 883cba69d287a8a4da1d6c85047aa232, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (4)
@@ -5955,7 +5968,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 02e820a3cd0d3d744b833306aebc3c7a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI
@@ -7655,7 +7668,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 85498c606c0fb4a45a74832dc7e33b51, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (2)
@@ -7761,7 +7774,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8982e72e282932b41a9efbd02a53f120, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (5)
@@ -8742,7 +8755,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c205d2780d97ea149868b06c8acfd53b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI (3)
@@ -8888,7 +8901,7 @@ PrefabInstance:
     - target: {fileID: 1472728980802534688, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4d13166594bd7ac4980c04e3c8a71674, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6092698401905707882, guid: 9112337efce62c049a3dec1c55fd8248, type: 3}
       propertyPath: m_Name
       value: Cell_UI
