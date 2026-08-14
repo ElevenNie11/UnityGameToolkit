@@ -28,12 +28,16 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        InitInventory();
     }
 
     private void OnEnable()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        InitInventory();
     }
 
     public void InitInventory()
@@ -106,7 +110,8 @@ public class InventoryManager : MonoBehaviour
 
                 if (count <= 0)
                 {
-                    RefreshAllUI();
+                    RefreshUIByType(item.itemType);
+                    Debug.Log("物品已堆叠到背包：" + item.itemName + "，格子：" + i);
                     return true;
                 }
             }
@@ -125,7 +130,8 @@ public class InventoryManager : MonoBehaviour
 
                 if (count <= 0)
                 {
-                    RefreshAllUI();
+                    RefreshUIByType(item.itemType);
+                    Debug.Log("物品已放入背包：" + item.itemName + "，类型：" + item.itemType + "，格子：" + i);
                     return true;
                 }
             }
@@ -146,6 +152,18 @@ public class InventoryManager : MonoBehaviour
         return foodSlots;
     }
 
+    private void RefreshUIByType(ItemType itemType)
+    {
+        if (itemType == ItemType.Weapon)
+        {
+            RefreshUI(contentWeapon, weaponSlots);
+        }
+        else
+        {
+            RefreshUI(contentFood, foodSlots);
+        }
+    }
+
     private void RefreshAllUI()
     {
         RefreshUI(contentWeapon, weaponSlots);
@@ -161,7 +179,7 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < content.childCount; i++)
         {
-            CellUI cell = content.GetChild(i).GetComponent<CellUI>();
+            CellUI cell = content.GetChild(i).GetComponentInChildren<CellUI>(true);
             if (cell == null)
             {
                 continue;
@@ -170,6 +188,11 @@ public class InventoryManager : MonoBehaviour
             if (i < slots.Count)
             {
                 cell.RefreshCell(slots[i].item, slots[i].count);
+
+                if (slots[i].item != null)
+                {
+                    Debug.Log("刷新格子：" + content.name + " / " + cell.name + " / " + slots[i].item.itemName);
+                }
             }
             else
             {
