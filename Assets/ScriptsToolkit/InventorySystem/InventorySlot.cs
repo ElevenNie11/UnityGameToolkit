@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventorySlot : MonoBehaviour,
                              IPointerClickHandler,
@@ -11,7 +12,7 @@ public class InventorySlot : MonoBehaviour,
 {
     [Header("子节点引用")]
     public Image iconImage;
-    public Text countText;
+    public TextMeshProUGUI countText;
     public Image selectedImage;
     public Image emptyMask;
 

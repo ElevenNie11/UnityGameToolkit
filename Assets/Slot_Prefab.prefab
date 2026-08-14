@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 7071532840836644766}
   - component: {fileID: 4926558174284608868}
   - component: {fileID: 7875961823705752068}
+  - component: {fileID: 7139819341388903839}
   m_Layer: 5
   m_Name: Slot_Prefab
   m_TagString: Untagged
@@ -451,3 +452,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7139819341388903839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014475880522570591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8741b90323012584cbc07d7f01228521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 3292824820195335376}
+  countText: {fileID: 4359402235595259216}
+  selectedImage: {fileID: 3069124204545047384}
+  emptyMask: {fileID: 7059667544734350860}
+  index: -1

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     public static InventoryUI Instance;
@@ -12,8 +12,8 @@ public class InventoryUI : MonoBehaviour
     public Image dragIcon;              //DragLayer/Image_DragIcon
 
     [Header("详情面板")]
-    public Text detailNameText;
-    public Text detailDescText;
+    public TextMeshProUGUI detailNameText;
+    public TextMeshProUGUI detailDescText;
     public Image detailIcon;
 
     private List<InventorySlot> slots = new List<InventorySlot>();
