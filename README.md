@@ -22,3 +22,9 @@
 Hierarchy结构
 
 <img width="239" height="282" alt="image" src="https://github.com/user-attachments/assets/0e2e3758-d9f4-4f49-9e84-89249e00d0b3" />
+
+---
+
+## 背包系统的测试数据
+<img width="934" height="948" alt="image" src="https://github.com/user-attachments/assets/f6cb37f7-4c3e-4a58-903b-daff9a58aaaf" />
+<img width="2559" height="1533" alt="image" src="https://github.com/user-attachments/assets/e8b1fde6-b4cb-447e-8397-f8a753327943" />
