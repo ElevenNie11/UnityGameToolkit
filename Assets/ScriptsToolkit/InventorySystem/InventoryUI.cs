@@ -11,7 +11,8 @@ public class InventoryUI : MonoBehaviour
     public GameObject slotPrefab;       //Slot_Prefab
     public Image dragIcon;              //DragLayer/Image_DragIcon
     public Button useButton;                //DetailPanel/Button_Use
-    
+    public Button deleteButton;             //DetailPanel/Button_Delete
+
     [Header("详情面板")]
     public TextMeshProUGUI detailNameText;
     public TextMeshProUGUI detailDescText;
@@ -27,8 +28,10 @@ public class InventoryUI : MonoBehaviour
         dragIcon.raycastTarget = false;     //确保拖拽图标不参与射线
         //绑定使用按钮
         useButton.onClick.AddListener(OnUseButtonClick);
+        deleteButton.onClick.AddListener(OnDeleteButtonClick);
         //初始Awake没有选择道具时，按钮不可点击
         useButton.interactable = false;
+        deleteButton.interactable = false;
     }
 
     //点击使用按钮：消耗当前选中的道具
@@ -55,7 +58,16 @@ public class InventoryUI : MonoBehaviour
         }
         //刷新UI
         Refresh();
-        UpdateUseButtonState();
+        UpdateActionButtonsState();
+    }
+
+    //点击删除按钮：移除当前选中的道具
+    public void OnDeleteButtonClick()
+    {
+        if(selectedIndex >= 0 && selectedIndex < InventoryManager.Instance.items.Count)
+        {
+            InventoryManager.Instance.RemoveItem(selectedIndex);
+        }
     }
     void Start()
     {
@@ -107,7 +119,7 @@ public class InventoryUI : MonoBehaviour
             detailDescText.text = "";
             detailIcon.enabled = false;
         }
-        UpdateUseButtonState();
+        UpdateActionButtonsState();
     }
     //拖拽图标
     public void ShowDragIcon(Sprite icon, Vector2 pos)
@@ -135,8 +147,10 @@ public class InventoryUI : MonoBehaviour
         detailIcon.enabled = false;
     }
     //根据是否有选中道具，控制使用按钮是否可点
-    private void UpdateUseButtonState()
+    private void UpdateActionButtonsState()
     {
-        useButton.interactable = selectedIndex >= 0 && selectedIndex < InventoryManager.Instance.items.Count;
+        bool hasSelection = selectedIndex >= 0 && selectedIndex < InventoryManager.Instance.items.Count;
+        useButton.interactable = hasSelection;
+        deleteButton.interactable = hasSelection;
     }
 }

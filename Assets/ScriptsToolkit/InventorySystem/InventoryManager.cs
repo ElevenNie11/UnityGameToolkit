@@ -24,11 +24,10 @@ public class InventoryManager : MonoBehaviour
     //移除道具
     public void RemoveItem(int index)
     {
-        if (index >= 0 && index < items.Count)
-        {
-            items.RemoveAt(index);
-            InventoryUI.Instance.Refresh();
-        }
+        if (index < 0 || index >= items.Count) return;
+        items.RemoveAt(index);
+        //通知 UI 修正选中索引并刷新
+        InventoryUI.Instance.OnItemRemoved(index);
     }
 
     //插入排序：把 from 位置的道具插入到 target 前面
@@ -68,9 +67,7 @@ public class InventoryManager : MonoBehaviour
         items[index].count--;
         if(items[index].count <= 0)
         {
-            items.RemoveAt(index);
-            //通知UI刷新
-            InventoryUI.Instance.OnItemRemoved(index);
+            RemoveItem(index);
         }
         else
         {
