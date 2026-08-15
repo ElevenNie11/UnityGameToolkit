@@ -37,7 +37,7 @@ public class HealthSystem : MonoBehaviour
     public void Heal(int percent)
     {
         int healAmount = Mathf.RoundToInt(maxHealth * percent / 100f);
-        currentHealth += healAmount;
+        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
         UpdateHealthBar();
     }
     //2. 掉血

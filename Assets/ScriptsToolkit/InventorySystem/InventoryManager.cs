@@ -64,6 +64,10 @@ public class InventoryManager : MonoBehaviour
     public void ConsumeItem(int index)
     {
         if(index < 0 || index >= items.Count) return;
+
+        //先拿到该食物的回血量百分比:
+        //注意要在RemoveItem之前读取healPercent，因为移除后索引会变
+        int heal = items[index].healPercent;
         items[index].count--;
         if(items[index].count <= 0)
         {
@@ -74,6 +78,6 @@ public class InventoryManager : MonoBehaviour
             InventoryUI.Instance.Refresh();
         }
         //吃食物回血10%，交给血量系统处理
-        HealthSystem.Instance.Heal(10);
+        HealthSystem.Instance.Heal(heal);
     }
 }

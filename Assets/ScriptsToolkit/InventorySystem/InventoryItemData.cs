@@ -7,4 +7,5 @@ public class InventoryItemData
     public Sprite icon;         //图标
     public int count;           //数量
     public string description;  //道具详情描述
+    public int healPercent = 10;     //回血百分比（0~100）默认10%
 }
