@@ -39,6 +39,11 @@ public class HealthSystem : MonoBehaviour
         int healAmount = Mathf.RoundToInt(maxHealth * percent / 100f);
         currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
         UpdateHealthBar();
+        //检测：满血时任务完成
+        if(currentHealth >= maxHealth)
+        {
+            QuestManager.Instance.CompleteQuest();
+        }
     }
     //2. 掉血
     public void TakeDamage(int amount)
