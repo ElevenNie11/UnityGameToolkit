@@ -73,5 +73,7 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryUI.Instance.Refresh();
         }
+        //吃食物回血10%，交给血量系统处理
+        HealthSystem.Instance.Heal(10);
     }
 }
