@@ -10,7 +10,8 @@ public class InventoryUI : MonoBehaviour
     public Transform content;           //ScrollView/Viewport/Content
     public GameObject slotPrefab;       //Slot_Prefab
     public Image dragIcon;              //DragLayer/Image_DragIcon
-
+    public Button useButton;                //DetailPanel/Button_Use
+    
     [Header("详情面板")]
     public TextMeshProUGUI detailNameText;
     public TextMeshProUGUI detailDescText;
@@ -24,8 +25,38 @@ public class InventoryUI : MonoBehaviour
         Instance = this;
         dragIcon.gameObject.SetActive(false);
         dragIcon.raycastTarget = false;     //确保拖拽图标不参与射线
+        //绑定使用按钮
+        useButton.onClick.AddListener(OnUseButtonClick);
+        //初始Awake没有选择道具时，按钮不可点击
+        useButton.interactable = false;
     }
 
+    //点击使用按钮：消耗当前选中的道具
+    public void OnUseButtonClick()
+    {
+        if (selectedIndex >= 0 && selectedIndex < InventoryManager.Instance.items.Count)
+        {
+            InventoryManager.Instance.ConsumeItem(selectedIndex);
+        }
+    }
+    //道具被消耗完以后：索引处理
+    public void OnItemRemoved(int removedIndex)
+    {
+        if (selectedIndex == removedIndex)
+        {
+            //被移除的就是当前选中的 → 取消选中
+            selectedIndex = -1;
+            ClearDetail();
+        }
+        else if (removedIndex < selectedIndex)
+        {
+            //选中的在被移除道具后面 → 整体前移一格
+            selectedIndex--;
+        }
+        //刷新UI
+        Refresh();
+        UpdateUseButtonState();
+    }
     void Start()
     {
         Refresh();
@@ -76,6 +107,7 @@ public class InventoryUI : MonoBehaviour
             detailDescText.text = "";
             detailIcon.enabled = false;
         }
+        UpdateUseButtonState();
     }
     //拖拽图标
     public void ShowDragIcon(Sprite icon, Vector2 pos)
@@ -93,5 +125,18 @@ public class InventoryUI : MonoBehaviour
     public void HideDragIcon()
     {
         dragIcon.gameObject.SetActive(false);
+    }
+
+    //清空详情面板
+    private void ClearDetail()
+    {
+        detailNameText.text = "";
+        detailDescText.text = "";
+        detailIcon.enabled = false;
+    }
+    //根据是否有选中道具，控制使用按钮是否可点
+    private void UpdateUseButtonState()
+    {
+        useButton.interactable = selectedIndex >= 0 && selectedIndex < InventoryManager.Instance.items.Count;
     }
 }
