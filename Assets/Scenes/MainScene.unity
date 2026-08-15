@@ -1390,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 848, y: 466.57}
+  m_AnchoredPosition: {x: 844.8, y: 454.8}
   m_SizeDelta: {x: 69.4417, y: 66.8515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393383590
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 300}
+  m_CellSize: {x: 175, y: 250}
   m_Spacing: {x: 45, y: 45}
   m_Constraint: 1
   m_ConstraintCount: 5
@@ -4014,6 +4014,34 @@ MonoBehaviour:
     description: "\u5403\u5B8C\u8FD9\u4EFD\u534E\u592B\u997C\uFF0C\u6062\u590D\u597D\u4F53\u529B\u5C31\u7EE7\u7EED\u8FDB\u53D1\u5427\uFF01\uFF08\u6062\u590D
       +5%\uFF09"
     healPercent: 5
+  - itemId: 4
+    itemName: "\u6D77\u9C9C\u6D53\u6C64"
+    icon: {fileID: 21300000, guid: 51f507f0506864d488e1a9f7551548d5, type: 3}
+    count: 5
+    description: "\u8FD9\u4EFD\u6D77\u9C9C\u6D53\u6C64\u4E5F\u8BB8\u4F1A\u5E2E\u52A9\u5192\u9669\u8005\u56DE\u5FC6\u5927\u822A\u6D77\u65F6\u4EE3\u7684\u5F80\u65E5\u8363\u5149...\uFF08\u6062\u590D
+      +10%\uFF09"
+    healPercent: 10
+  - itemId: 5
+    itemName: "\u9EC4\u6CB9\u9762\u5305"
+    icon: {fileID: 21300000, guid: 8982e72e282932b41a9efbd02a53f120, type: 3}
+    count: 3
+    description: "\u98CE\u9761\u4E8E\u4E00\u4F17\u5192\u9669\u8005\u4E4B\u95F4\u7684\u9EC4\u6CB9\u9762\u5305\uFF0C\u53EF\u662F\u80E1\u5854\u9152\u9986\u7684\u70ED\u9500\u54C1\u54E6\uFF01\uFF08\u6062\u590D
+      +5%\uFF09"
+    healPercent: 5
+  - itemId: 6
+    itemName: "\u4E71\u7096"
+    icon: {fileID: 21300000, guid: 9ba21bf4bd85fcd43a5e38dced92c146, type: 3}
+    count: 1
+    description: "\u6602\u8D35\u7684\u4E71\u7096\u4F46\u662F\u9971\u8179\u611F\u8D85\u5F3A\uFF0C\u5473\u9053\u4E5F\u4E0D\u9519\u3002\uFF08\u6062\u590D
+      +80%\uFF09"
+    healPercent: 80
+  - itemId: 7
+    itemName: "\u7099\u70E4\u7F8A\u817F"
+    icon: {fileID: 21300000, guid: c205d2780d97ea149868b06c8acfd53b, type: 3}
+    count: 1
+    description: "\u80E1\u5854\u9152\u9986\u7684\u62DB\u724C\u4E4B\u4E00\uFF0C\u91CC\u5965\u5217\u65AF\u5148\u751F\u8FD8\u662F\u521D\u7EA7\u5192\u9669\u8005\u65F6\u5E38\u5403\u7684\u4E00\u79CD\u98DF\u7269\uFF0C\u4E0D\u5982\u5C1D\u5C1D\uFF1F\uFF08\u6062\u590D
+      +75%\uFF09"
+    healPercent: 75
 --- !u!4 &1306598943
 Transform:
   m_ObjectHideFlags: 0
@@ -5102,7 +5130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 10
+  currentHealth: 5
   healthSlider: {fileID: 1021461552}
   healthText: {fileID: 995282395}
 --- !u!4 &1732796589
@@ -5409,7 +5437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5673,6 +5701,7 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1238307639}
+  - {fileID: 1732796589}
   - {fileID: 1338640680}
   - {fileID: 1761052246}
   - {fileID: 286348347}
@@ -5680,5 +5709,4 @@ SceneRoots:
   - {fileID: 223548073}
   - {fileID: 1012446876}
   - {fileID: 1476974788}
-  - {fileID: 1732796589}
   - {fileID: 1306598943}
