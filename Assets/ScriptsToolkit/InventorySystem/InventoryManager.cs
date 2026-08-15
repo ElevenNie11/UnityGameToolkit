@@ -60,4 +60,21 @@ public class InventoryManager : MonoBehaviour
         }
         InventoryUI.Instance.Refresh();
     }
+
+    //使用道具：点击“使用”按钮
+    public void ConsumeItem(int index)
+    {
+        if(index < 0 || index >= items.Count) return;
+        items[index].count--;
+        if(items[index].count <= 0)
+        {
+            items.RemoveAt(index);
+            //通知UI刷新
+            InventoryUI.Instance.OnItemRemoved(index);
+        }
+        else
+        {
+            InventoryUI.Instance.Refresh();
+        }
+    }
 }
