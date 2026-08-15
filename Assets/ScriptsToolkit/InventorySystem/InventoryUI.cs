@@ -47,14 +47,8 @@ public class InventoryUI : MonoBehaviour
     {
         if (selectedIndex == removedIndex)
         {
-            //被移除的就是当前选中的 → 取消选中
             selectedIndex = -1;
             ClearDetail();
-        }
-        else if (removedIndex < selectedIndex)
-        {
-            //选中的在被移除道具后面 → 整体前移一格
-            selectedIndex--;
         }
         //刷新UI
         Refresh();
