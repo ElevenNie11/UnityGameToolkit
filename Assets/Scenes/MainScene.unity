@@ -3618,7 +3618,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 966336946}
   m_HandleRect: {fileID: 0}
@@ -5470,7 +5470,7 @@ GameObject:
   - component: {fileID: 1510880475}
   - component: {fileID: 1510880474}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Slider_Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
