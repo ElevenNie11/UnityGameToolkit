@@ -17,7 +17,10 @@
 - 背包管理：InventoryManager.cs
 - 背包UI刷新: InventoryUI.cs
 
-## #04. MissonSystem(Quests)
+## #04. HealthSystem
+- 血量系统：HealthSystem.cs（血条UI用 **Slider** 实现）
+
+## #05. MissonSystem(Quests)
 - 任务管理：QuestManager.cs
 - 任务UI：QuestUI.cs
 
