@@ -18,14 +18,14 @@ public class QuestUI : MonoBehaviour
     void Start()
     {
         //绑定任务图标点击事件
-        GetComponent<Button>().onClick.AddListener(OnQuestIconClicked);
+        //GetComponent<Button>().onClick.AddListener(OnQuestIconClicked);
         closedBook.SetActive(true);
         openBook.SetActive(false);
         questPanel.SetActive(false);
     }
 
     //点击任务图标：打开/关闭面板
-    private void OnQuestIconClicked()
+    public void OnQuestIconClicked()
     {
         if (isPanelOpen)
         {
