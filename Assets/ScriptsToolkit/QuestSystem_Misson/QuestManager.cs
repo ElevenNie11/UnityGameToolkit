@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     public List<string>quests = new List<string>
     {
         "亲爱的冒险者, 请先将体力恢复到100%吧！",
-        "接下来, 请前往里奥列斯先生的书店..."
+        "接下来, 请前往里奥列斯先生的书店！"
         //以后继续往后加任务......
     };
 
