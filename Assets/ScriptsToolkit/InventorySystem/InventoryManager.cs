@@ -17,7 +17,19 @@ public class InventoryManager : MonoBehaviour
     //添加道具
     public void AddItem(InventoryItemData item)
     {
-        items.Add(item);
+        //查找背包里是否已有相同ID的道具
+        //商城购买直接角标累加即可
+        InventoryItemData existing = items.Find(x => x.itemId == item.itemId);
+        if (existing != null)
+        {
+            //相同道具：数量叠加
+            existing.count += item.count;
+        }
+        else
+        {
+            //没有这个道具就新增一个格子
+            items.Add(item);
+        }
         InventoryUI.Instance.Refresh();
     }
 

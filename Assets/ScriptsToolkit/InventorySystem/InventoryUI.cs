@@ -21,17 +21,27 @@ public class InventoryUI : MonoBehaviour
     private List<InventorySlot> slots = new List<InventorySlot>();
     public int selectedIndex = -1;
 
-    void Awake()
+    private bool inited = false;
+    void OnEnable()
     {
+        //每次激活都重新赋值Instance，确保外部能访问到
         Instance = this;
-        dragIcon.gameObject.SetActive(false);
-        dragIcon.raycastTarget = false;     //确保拖拽图标不参与射线
-        //绑定使用按钮
-        useButton.onClick.AddListener(OnUseButtonClick);
-        deleteButton.onClick.AddListener(OnDeleteButtonClick);
-        //初始Awake没有选择道具时，按钮不可点击
-        useButton.interactable = false;
-        deleteButton.interactable = false;
+        //只初始化一次（按钮绑定、dragIcon设置）
+        if (!inited)
+        {
+            dragIcon.gameObject.SetActive(false);
+            dragIcon.raycastTarget = false;     //确保拖拽图标不参与射线
+            //绑定使用按钮
+            useButton.onClick.AddListener(OnUseButtonClick);
+            deleteButton.onClick.AddListener(OnDeleteButtonClick);
+            //初始Awake没有选择道具时，按钮不可点击
+            useButton.interactable = false;
+            deleteButton.interactable = false;
+
+            inited = true;
+        }
+        //每次打开背包时刷新一下显示
+        Refresh();
     }
 
     //点击使用按钮：消耗当前选中的道具
