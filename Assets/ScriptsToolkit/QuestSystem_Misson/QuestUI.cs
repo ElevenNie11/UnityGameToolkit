@@ -7,7 +7,7 @@ using TMPro;
 public class QuestUI : MonoBehaviour
 {
     [Header("图标icon")]
-    public GameObject closedBook;
+    public GameObject closedBook;     //SetActive()
     public GameObject openBook;
     [Header("任务面板")]
     public GameObject questPanel;
