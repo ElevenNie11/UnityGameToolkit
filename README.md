@@ -1,4 +1,5 @@
 # Unity脚本工具包[Unity Scripts Toolkit]
+# 所有脚本均在[Assets/ScriptsToolkit]文件夹里
 # 目录 [Content]
 
 ## #01. DialogueSystem
@@ -23,6 +24,16 @@
 ## #05. MissonSystem(Quests)
 - 任务管理：QuestManager.cs
 - 任务UI：QuestUI.cs
+
+## #06. ShopSystem
+- 商店管理：ShopManager.cs
+- 商品UI：  ShopUI.cs
+- 商品管理： ShopItemSlot.cs
+
+## #07. SaveSystem
+#### 游戏存档系统：只存血量、金币、任务进度，不碰道具（因为道具图标是sprite，如果要存档就要修改ItemData的数据结构，改动量太大，所以单独建一个GitHub仓库来做一个完整的存档系统：）
+-
+- 
 
 ---
 
