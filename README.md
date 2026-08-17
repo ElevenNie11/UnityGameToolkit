@@ -1,4 +1,5 @@
 # Unity脚本工具包[Unity Scripts Toolkit]
+# 所有脚本均在[Assets/ScriptsToolkit]文件夹里
 # 目录 [Content]
 
 ## #01. DialogueSystem
