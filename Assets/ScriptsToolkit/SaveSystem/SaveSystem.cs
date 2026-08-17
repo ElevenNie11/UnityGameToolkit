@@ -11,6 +11,16 @@ public class SaveSystem : MonoBehaviour
         savePath = Application.persistentDataPath + "/savefile.json";
     }
 
+    void Start()
+    {
+        Load();  //游戏启动时自动读档
+    }
+
+    void OnAlicationQuit()
+    {
+        Save();  //游戏启动时自动读档
+    }
+
     //保存游戏
     public void Save()
     {
