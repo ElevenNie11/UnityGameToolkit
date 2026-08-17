@@ -25,6 +25,11 @@
 - 任务管理：QuestManager.cs
 - 任务UI：QuestUI.cs
 
+## #06. ShopSystem
+- 商店管理：ShopManager.cs
+- 商品UI：  ShopUI.cs
+- 商品管理： ShopItemSlot.cs
+
 ---
 
 ## 无代码实现多个画面切换: *Toggle*
