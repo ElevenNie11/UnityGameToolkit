@@ -22,9 +22,10 @@ public class SaveSystem : MonoBehaviour
         Load();               //游戏启动时自动读档
     }
 
+    //OnApplicationQuit函数：打包后在正式游戏里退出是会触发的，但编辑器里不稳定
     void OnAlicationQuit()
     {
-        Save();  //游戏启动时自动读档
+        Save();
     }
 
     //保存游戏
