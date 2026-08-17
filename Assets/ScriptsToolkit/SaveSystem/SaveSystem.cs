@@ -13,7 +13,13 @@ public class SaveSystem : MonoBehaviour
 
     void Start()
     {
-        Load();  //游戏启动时自动读档
+        StartCoroutine(LoadNextFrame());
+    }
+
+    System.Collections.IEnumerator LoadNextFrame()
+    {
+        yield return null;    //等一帧，让所有系统Awake完
+        Load();               //游戏启动时自动读档
     }
 
     void OnAlicationQuit()
@@ -63,13 +69,22 @@ public class SaveSystem : MonoBehaviour
         Debug.Log("存档已加载完毕");
     }
 
-    //删除存档
-    public void DeleteSave()
+    //重置游戏
+    public void ResetGame()
     {
+        //重置数据到初始状态
+        HealthSystem.Instance.currentHealth = 5;
+        ShopManager.Instance.coins = 100;
+        QuestManager.Instance.currentQuestIndex = 0;
+        QuestManager.Instance.questCompleted = false;
+        //立刻刷新UI显示
+        HealthSystem.Instance.UpdateHealthBar();
+        ShopUI.Instance.UpdateCoinsDisplay();
+        //删除存档
         if (File.Exists(savePath))
         {
             File.Delete(savePath);
-            Debug.Log("存档已删除");
         }
+        Debug.Log("所有数据已重置");
     }
 }
