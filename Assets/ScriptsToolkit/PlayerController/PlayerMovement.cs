@@ -10,6 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 2f;    //跳跃高度
     public CharacterController controller;
     private Vector3 velocity;  //用来存储当前速度
+
+    void Start()
+    {
+        velocity.y = -2f;  //开局就给一个小的向下速度，确保第一帧就触发地面检测，玩家紧贴地面
+    }
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
