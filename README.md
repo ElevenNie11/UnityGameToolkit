@@ -1,5 +1,6 @@
 # Unity-UGUI脚本工具包[Unity Scripts Toolkit]
 # 所有脚本均在[Assets/ScriptsToolkit]文件夹里
+## 本工具包仅提供脚本参考，UI布局参考请自行学习
 # 目录 [Content]
 
 ## #01. DialogueSystem
